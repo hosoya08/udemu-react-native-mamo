@@ -13,7 +13,6 @@ export default function Layout() {
             <Stack.Screen name="memos/index" options={{ headerTitle: 'メモ' }} />
             <Stack.Screen name="memos/create" options={{ headerTitle: '' }} />
             <Stack.Screen name="memos/[id]" options={{ headerTitle: '' }} />
-            {/* devのときに修正したもの */}
         </Stack>
     );
 }
