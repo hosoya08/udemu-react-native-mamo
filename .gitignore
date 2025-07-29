@@ -34,3 +34,8 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# 上記以外のもの
+.prettierrc.js
+babel.config.js
+.history
