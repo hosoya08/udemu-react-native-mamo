@@ -1,10 +1,31 @@
 // ホーム画面
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
+    // 以下onPressでボタンを押下した際に実行される関数
+    const handleAllMemoPress = () => {}
+
+    const handleLabelPress = () => {}
+
+    const handleAddLabelPress = () => {}
+
+    const handleEditLabelPress = () => {}
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>ホーム画面</Text>
+            <Button title="ラベル追加" onPress={handleAddLabelPress} />
+
+            <Button title="すべてのメモ" onPress={handleAllMemoPress} />
+
+            <View style={{ flexDirection: "row", alignContent: "center" }}>
+                <Button title="ラベル1" onPress={handleLabelPress} />
+                <MaterialIcons name="edit" size={24} color={"gray"} onPress={handleEditLabelPress} />
+            </View>
+
+            <View style={{ flexDirection: "row", alignContent: "center" }}>
+                <Button title="ラベル2" onPress={handleLabelPress} />
+                <MaterialIcons name="edit" size={24} color={"gray"} onPress={handleEditLabelPress} />
+            </View>
         </View>
     )
 }
