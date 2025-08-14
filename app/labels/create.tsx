@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function LabelCreateScreen() {
+    /**
+     * [作成]が押されたときの処理
+     */
     const handleCreatePress = ()=> {
         router.dismiss();
     }

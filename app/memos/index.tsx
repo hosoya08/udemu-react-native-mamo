@@ -6,9 +6,17 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function MemoListScreen() {
     const { labelId } = useLocalSearchParams();
 
+    /**
+     * [作成]を押下されたときの処理
+     */
     const handleCreatePress = () => {
         router.push({ pathname: '/memos/create' });
     };
+
+    /**
+     * 修正メモが押下されたときの処理
+     * @param memoId メモID
+     */
     const handleMemoPress = (memoId: string) => {
         router.push({ pathname: `/memos/${memoId}` });
     };

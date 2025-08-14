@@ -7,6 +7,9 @@ export default function LabelEditScreen() {
 
     const { id } = useLocalSearchParams();
 
+    /**
+     * [ラベル修正]が押下されたときの処理
+     */
     const handleEditPress = ()=> {
         router.dismiss();
     }

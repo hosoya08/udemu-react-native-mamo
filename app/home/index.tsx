@@ -5,19 +5,34 @@ import { router } from 'expo-router';
 
 export default function HomeScreen() {
     // 以下onPressでボタンを押下した際に実行される関数
+
+    /**
+     * [すべてのメモ]が押されたときの処理
+     */
     const handleAllMemoPress = () => {
         router.push({ pathname: '/memos' });
     };
 
+    /**
+     * ラベルが押されたときの処理
+     * @param labelId ラベルID
+     */
     const handleLabelPress = (labelId: number) => {
         const params = { labelId: labelId };
         router.push({ pathname: '/memos', params: params });
     };
 
+    /**
+     * [ラベル追加]が押されたときの処理
+     */
     const handleAddLabelPress = () => {
         router.push({ pathname: '/labels/create' });
     };
 
+    /**
+     * ラベル修正が押されたときの処理
+     * @param labelId ラベルID
+     */
     const handleEditLabelPress = (labelId: number) => {
         router.push({ pathname: `/labels/${labelId}` });
     };

@@ -6,6 +6,9 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function MemoEditScreen() {
     const { id } = useLocalSearchParams();
 
+    /**
+     * [保存]が押下されたときの処理
+     */
     const handleSavePress = () => {
         router.back();
     };

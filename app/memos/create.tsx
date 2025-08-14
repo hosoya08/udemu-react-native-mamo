@@ -4,6 +4,10 @@ import { useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function MemoCreateScreen() {
+
+    /**
+     * [作成]が押下されたときの処理
+     */
     const handleCreatePress = () => {
         router.back(); // backは一画面前に戻る
     };
