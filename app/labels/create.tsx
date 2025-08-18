@@ -1,9 +1,17 @@
 // ラベル作成画面
-import { router } from 'expo-router';
+import { router, useNavigation } from 'expo-router';
 import { useEffect } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function LabelCreateScreen() {
+    const navigation = useNavigation();
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => {
+                return <Button title='作成' onPress={handleCreatePress} />
+            }
+        })
+    },[]);
     /**
      * [作成]が押されたときの処理
      */
@@ -13,7 +21,6 @@ export default function LabelCreateScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>ラベル作成</Text>
-            <Button title='作成' onPress={handleCreatePress} />
         </View>
     )
 }
