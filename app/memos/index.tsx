@@ -1,10 +1,20 @@
 // メモ一覧画面
-import { router, useLocalSearchParams, usePathname } from 'expo-router';
+import Feather from '@expo/vector-icons/Feather';
+import { router, useLocalSearchParams, usePathname, useNavigation } from 'expo-router';
 import { useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function MemoListScreen() {
+    const navigation = useNavigation();
     const { labelId } = useLocalSearchParams();
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => {
+                return <Feather name="edit" size={24} color="black" onPress={handleCreatePress}/>;
+            }
+        });
+    }, []);
 
     /**
      * [作成]を押下されたときの処理
@@ -23,7 +33,6 @@ export default function MemoListScreen() {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{labelId ? `ラベルID： ${labelId}` : 'すべてのメモ'}</Text>
-            <Button title="メモ作成" onPress={handleCreatePress} />
 
             <Button title="メモ1" onPress={() => handleMemoPress('ABC')} />
             <Button title="メモ2" onPress={() => handleMemoPress('DEF')} />
