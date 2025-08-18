@@ -1,10 +1,23 @@
 // ホーム画面
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { router } from 'expo-router';
+import { router, useNavigation } from 'expo-router';
+import { useEffect } from 'react';
 
 export default function HomeScreen() {
-    // 以下onPressでボタンを押下した際に実行される関数
+    /**
+     * ホーム画面
+     */
+    const navigation = useNavigation();
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => {
+                return <MaterialIcons name="new-label" size={24} color="black" onPress={handleAddLabelPress} />
+            }
+        })
+    }, [])
+
 
     /**
      * [すべてのメモ]が押されたときの処理
@@ -38,8 +51,6 @@ export default function HomeScreen() {
     };
     return (
         <View style={styles.container}>
-            <Button title="ラベル追加" onPress={handleAddLabelPress} />
-
             <Button title="すべてのメモ" onPress={handleAllMemoPress} />
 
             <View style={{ flexDirection: 'row', alignContent: 'center' }}>
